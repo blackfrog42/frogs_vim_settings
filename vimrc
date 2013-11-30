@@ -1,8 +1,15 @@
-filetype on
-set modeline
-filetype plugin on
-filetype indent on
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" My Bundles
+
+
 let g:ft_ignore_pat = '\.org'
 set grepprg=grep\ -nH\ $*
 
