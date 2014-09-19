@@ -14,6 +14,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'klen/python-mode'
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
+Bundle 'vim-scripts/MailApp' 
 
 
 
@@ -22,7 +23,8 @@ Bundle 'L9'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-haml'
 
-
+"Disabled Plugins
+"Bundle 'kakkyz81/evervim'
 
 
 
@@ -123,7 +125,7 @@ nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 " to it's original position within the buffer.
  
 " This script assumes formd is in your path at:
-" ~/bin/formd/formd
+" ~/bin/formd
 " http://drbunsen.github.com/formd/
  
  
@@ -131,11 +133,11 @@ function! Formd(option)
     :let save_view = winsaveview()
     :let flag = a:option
     :if flag == "-r"
-        :%! ~/bin/formd/formd -r
+        :%! ~/bin/formd -r
     :elseif flag == "-i"
-        :%! ~/bin/formd/formd -i
+        :%! ~/bin/formd -i
     :else
-        :%! ~/bin/formd/formd -f
+        :%! ~/bin/formd -f
     :endif
     :call winrestview(save_view)
 endfunction
@@ -145,3 +147,14 @@ endfunction
 nmap <leader>fr :call Formd("-r")<CR>
 nmap <leader>fi :call Formd("-i")<CR>
 nmap <leader>f :call Formd("-f")<CR>
+
+
+"---------------
+"MailApp settings
+let MailApp_from = 'charlie@dairyv.com'
+
+
+"--  command to open current buffer in Marked.app
+command! Marked silent !open -a "Marked.app" "%:p" 
+"bundle 'itspriddle/vim-marked'
+"nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
