@@ -154,7 +154,14 @@ nmap <leader>f :call Formd("-f")<CR>
 let MailApp_from = 'charlie@dairyv.com'
 
 
+“===========   Marked Bindings   ===================
 "--  command to open current buffer in Marked.app
 command! Marked silent !open -a "Marked.app" "%:p" 
+command! Marked2 silent !open -a "Marked 2.app" "%:p" 
+
 "bundle 'itspriddle/vim-marked'
-"nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+"nnoremap <leader>m :silent !open -a Marked 2.app '%:p'<cr>
+
+
+“==========   Misc Bindings   =================
+:imap ;; <Esc>
